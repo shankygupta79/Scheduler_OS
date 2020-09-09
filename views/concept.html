@@ -14,7 +14,7 @@
                 integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
                 crossorigin="anonymous"></script>
             <link rel="stylesheet" href="../css/dashboard.css">
-            <link rel="stylesheet" href="http://localhost:3420/dashboard/style2">
+            <link rel="stylesheet" href="https://scheduleros.herokuapp.com/dashboard/style2">
             <link rel="stylesheet" href="../css/concept.css">
             <title>concept</title>
         </head>
@@ -39,7 +39,7 @@
         
             </div>
             <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
-            <script src="http://localhost:3420/navbar2"></script>
+            <script src="https://scheduleros.herokuapp.com/navbar2"></script>
         
             <!-- jQuery CDN - Slim version (=without AJAX) -->
             <script>
@@ -60,7 +60,7 @@
                     },
                     methods: {
                         load: function () { 
-                            axios.get('http://localhost:3420/dashboard/api/dash')
+                            axios.get('https://scheduleros.herokuapp.com/dashboard/api/dash')
                                 .then(function (Response1) {
                                     console.log(Response1)
                                     log.total=Response1[0]
@@ -124,7 +124,7 @@
                 
             </script>
             
-            <script src="http://localhost:3420/navbar2/collapsing"></script>
+            <script src="https://scheduleros.herokuapp.com/navbar2/collapsing"></script>
         </body>
         
         </html>

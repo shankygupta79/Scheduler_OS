@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
         integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="http://localhost:3420/dashboard/css">
-    <link rel="stylesheet" href="http://localhost:3420/dashboard/style2">
+    <link rel="stylesheet" href="https://scheduleros.herokuapp.com/dashboard/css">
+    <link rel="stylesheet" href="https://scheduleros.herokuapp.com/dashboard/style2">
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios@0.2.1/dist/axios.min.js"></script>
@@ -79,7 +79,7 @@
 
     </div>
     <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
-    <script src="http://localhost:3420/navbar2"></script>
+    <script src="https://scheduleros.herokuapp.com/navbar2"></script>
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script>
@@ -105,7 +105,7 @@
                     var h=dt.getHours();
                     var min=dt.getMinutes();
                     var st=h+":"+min;
-                    axios.get('http://localhost:3420/tasks/api/dash?day='+(dt.getDay())+'&tm='+st)
+                    axios.get('https://scheduleros.herokuapp.com/tasks/api/dash?day='+(dt.getDay())+'&tm='+st)
                         .then(function (tasks) {
                             console.log(tasks)
                             log.myArray = tasks
@@ -132,7 +132,7 @@
     </script>
     
 
-    <script src="http://localhost:3420/navbar2/collapsing"></script>
+    <script src="https://scheduleros.herokuapp.com/navbar2/collapsing"></script>
 </body>
 
 </html>

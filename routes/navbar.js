@@ -79,17 +79,17 @@ Vue.component('navbar-component', {
     <ul class="list-unstyled components" style="padding:0">
         <p>Welcome</p>
         <li>
-            <a href="http://localhost:3420/dashboard"><i class="fa fa-tachometer" style="color:blue" aria-hidden="true"></i>&nbsp Dashboard</a>
+            <a href="https://scheduleros.herokuapp.com/dashboard"><i class="fa fa-tachometer" style="color:blue" aria-hidden="true"></i>&nbsp Dashboard</a>
         </li>
         <li >
             <a href="#employee" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
             <i class="fa fa-tasks" aria-hidden="true" style="color:green"></i>&nbsp Add Task</a>
             <ul class="collapse list-unstyled" id="employee" data-parent="#sidebar">
                 <li>
-                    <a href="http://localhost:3420/tasks/add_single"><i class="fa fa-ellipsis-h" style="color:green"aria-hidden="true"></i>&nbsp Add Single Task</a>
+                    <a href="https://scheduleros.herokuapp.com/tasks/add_single"><i class="fa fa-ellipsis-h" style="color:green"aria-hidden="true"></i>&nbsp Add Single Task</a>
                 </li>
                 <li>
-                    <a href="http://localhost:3420/tasks/add_multiple"><i class="fa fa-ellipsis-h" style="color:green"aria-hidden="true"></i>&nbsp Add Multiple Task</a>
+                    <a href="https://scheduleros.herokuapp.com/tasks/add_multiple"><i class="fa fa-ellipsis-h" style="color:green"aria-hidden="true"></i>&nbsp Add Multiple Task</a>
                 </li>
             </ul>
         </li>
@@ -99,10 +99,10 @@ Vue.component('navbar-component', {
             
             <ul class="collapse list-unstyled" id="department" data-parent="#sidebar">
             <li>
-                    <a href="http://localhost:3420/tasks/manage_tasks"><i class="fa fa-ellipsis-h" style="color:black"aria-hidden="true"></i>&nbsp Manage Tasks</a>
+                    <a href="https://scheduleros.herokuapp.com/tasks/manage_tasks"><i class="fa fa-ellipsis-h" style="color:black"aria-hidden="true"></i>&nbsp Manage Tasks</a>
             </li>    
             <li>
-                    <a href="http://localhost:3420/tasks/scheduler"><i class="fa fa-ellipsis-h" style="color:black"aria-hidden="true"></i>&nbsp Scheduler</a>
+                    <a href="https://scheduleros.herokuapp.com/tasks/scheduler"><i class="fa fa-ellipsis-h" style="color:black"aria-hidden="true"></i>&nbsp Scheduler</a>
                 </li>
             </ul>
         </li>
@@ -111,7 +111,7 @@ Vue.component('navbar-component', {
             <i class="fa fa-fort-awesome" style="color:purple" aria-hidden="true"></i>&nbsp Concept</a>
             <ul class="collapse list-unstyled" id="concept" data-parent="#sidebar">
                 <li>
-                    <a href="http://localhost:3420/concept"><i class="fa fa-ellipsis-h" style="color:purple"aria-hidden="true"></i>&nbsp Project File</a>
+                    <a href="https://scheduleros.herokuapp.com/concept"><i class="fa fa-ellipsis-h" style="color:purple"aria-hidden="true"></i>&nbsp Project File</a>
                 </li>
             </ul>
         </li>
@@ -122,10 +122,10 @@ Vue.component('navbar-component', {
             <i class="fa fa-cogs" aria-hidden="true" style="color:rgb(196, 5, 5)"></i>&nbsp Settings</a>
             <ul class="collapse list-unstyled" id="setting" data-parent="#sidebar">
                 <li>
-                    <a href="http://localhost:3420/settings/change_password"><i class="fa fa-ellipsis-h" style="color:rgb(196, 5, 5)"aria-hidden="true"></i>&nbsp Change Password</a>
+                    <a href="https://scheduleros.herokuapp.com/settings/change_password"><i class="fa fa-ellipsis-h" style="color:rgb(196, 5, 5)"aria-hidden="true"></i>&nbsp Change Password</a>
                 </li>
                 <li>
-                    <a href="http://localhost:3420/settings/configrations"><i class="fa fa-ellipsis-h" style="color:rgb(196, 5, 5)"aria-hidden="true"></i>&nbsp Configurations</a>
+                    <a href="https://scheduleros.herokuapp.com/settings/configrations"><i class="fa fa-ellipsis-h" style="color:rgb(196, 5, 5)"aria-hidden="true"></i>&nbsp Configurations</a>
                 </li>
             </ul>
         </li>
@@ -134,7 +134,7 @@ Vue.component('navbar-component', {
         
         
         <li>
-            <a href="http://localhost:3420/auth/logout"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp Logout</a>
+            <a href="https://scheduleros.herokuapp.com/auth/logout"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp Logout</a>
         </li>
     </ul>
 
@@ -173,10 +173,10 @@ Vue.component('navbar-top', {
         <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown2-content">
-            <a href="http://localhost:3420/settings/profile" >Profile</a>
-            <a href="http://localhost:3420/settings/change_password" class="hov">Change Password</a>
-            <a href="http://localhost:3420/settings/configrations" class="hov">Configrations</a>
-            <a href="http://localhost:3420/auth/logout" class="hov">Logout &nbsp<i class="fa fa-sign-out" aria-hidden="true"></i> </a>
+            <a href="https://scheduleros.herokuapp.com/settings/profile" >Profile</a>
+            <a href="https://scheduleros.herokuapp.com/settings/change_password" class="hov">Change Password</a>
+            <a href="https://scheduleros.herokuapp.com/settings/configrations" class="hov">Configrations</a>
+            <a href="https://scheduleros.herokuapp.com/auth/logout" class="hov">Logout &nbsp<i class="fa fa-sign-out" aria-hidden="true"></i> </a>
           </div>
     </div>
     </div>
