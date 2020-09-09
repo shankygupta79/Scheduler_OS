@@ -70,6 +70,7 @@ function cr(arr) {
   })
 }
 function start(num) {
+  num=num%1440;
   var h = Math.floor(num / 60);
   var min = num % 60;
   if (h == 0) {

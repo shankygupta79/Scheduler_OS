@@ -168,7 +168,7 @@
                 },calc(i){
                     var h=parseInt(log.myArray[i].start.slice(0,2));
                     var min=parseInt(log.myArray[i].start.slice(3,5));
-                    h=h+(log.myArray[i].duration/60);
+                    h=h+Math.floor(log.myArray[i].duration/60);
                     min=min+log.myArray[i].duration%60;
                     if(min>60){
                         h=h+1;
@@ -193,7 +193,7 @@
                         $('#mybtn').prop('disabled', false);
                     }
                     console.log(h+":"+min)
-                    log.myArray[i].end=(Math.floor(h)+":"+min);
+                    log.myArray[i].end=(h+":"+min);
                     return "";
                 
                 },submit() {

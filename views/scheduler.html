@@ -41,61 +41,69 @@
                     <div class="headin center">Scheduler</div>
                     <div class="roww"></div>
                     <div class="sp">
-                    <table class="report">
-                        <tr>
-                            <td><strong class="options">Select Scheduling Technique :</strong></td>
-                        </tr>
-                        <tr>
-                            <td><select class="form-control options" v-model="select">
-                                    <option style="color: black;" v-for="i in scheduling">{{i}}</option>
-                                </select></td>
-                            <td>
-                                <button id='mybtn' @click="submit()" style="padding: 5px 30px;"
-                                    class="btn btn-success">Go
-                                    &nbsp;&nbsp;<i class="fa fa-spinner fa-spin" id='abc'></i>
-                                </button>
-                            </td>
+                        <table class="report">
+                            <tr>
+                                <td><strong class="options">Select Scheduling Technique :</strong></td>
+                            </tr>
+                            <tr>
+                                <td><select class="form-control options" v-model="select">
+                                        <option style="color: black;" v-for="i in scheduling">{{i}}</option>
+                                    </select></td>
+                                <td>
+                                    <button id='mybtn' @click="submit()" style="padding: 5px 30px;"
+                                        class="btn btn-success">Go
+                                        &nbsp;&nbsp;<i class="fa fa-spinner fa-spin" id='abc'></i>
+                                    </button>
+                                </td>
 
-                        </tr>
-                    </table><br>
-                    
-                    <table class="table1" v-if="y==1" cellspacing="0" cellpadding="0">
-                        <tr>
-                            <th class='th1 td2' v-for="i in 25">
-                                <b v-if="i==1"> Days </b>
-                                <b v-if="i>1 ">{{i-2}}:00-{{i-1}}:00</b>
+                            </tr>
+                        </table><br>
+
+                        <table class="table1" v-if="y==1" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <th class='th1 td2' v-for="i in 25">
+                                    <b v-if="i==1"> Days </b>
+                                    <b v-if="i>1 ">{{i-2}}:00-{{i-1}}:00</b>
 
 
-                            </th>
+                                </th>
 
-                        </tr>
-                        <tr v-for="day in 7">
-                            <td class="td1 td2"><b>{{days[day-1]}}</b></td>
-                            <td v-for="i in 24" class="td1">
+                            </tr>
+                            <tr v-for="day in 7">
+                                <td class="td1 td2"><b>{{days[day-1]}}</b></td>
+                                <td v-for="i in 24" class="td1">
 
-                                <span v-for="a in 60" @click="ref(time[(i-1)*60+a-1 + 1440*(day-1)])"
-                                    v-bind:style="{ backgroundColor: color[time[(i-1)*60+a-1 + 1440*(day-1)]%5] }">
-                                    <span class="ab ab1" v-if="time[(i-1)*60+a-1 + 1440*(day-1)]>=0">
+                                    <span v-for="a in 60" @click="ref(time[(i-1)*60+a-1 + 1440*(day-1)])"
+                                        v-bind:style="{ backgroundColor: color[time[(i-1)*60+a-1 + 1440*(day-1)]%10] }">
+                                        
+                                        <span class="ab ab1" v-if="time[(i-1)*60+a-1 + 1440*(day-1)]>=0">
 
-                                        <b
-                                            v-if="mame[(i-1)*60+a-1 + 1440*(day-1)]!=' '">{{mame[(i-1)*60+a-1 + 1440*(day-1)]}}</b><b
-                                            v-else><i v-if="(a-1)%3!=0">&nbsp;</i></b></span>
-                                    <span class="ab" v-else><b v-if="(a-1)%3==0">&nbsp</b></span>
-                                </span>
+                                            <b
+                                                v-if="mame[(i-1)*60+a-1 + 1440*(day-1)]!=' '">{{mame[(i-1)*60+a-1 + 1440*(day-1)]}}</b><b
+                                                v-else><i v-if="(a-1)%3!=0">&nbsp;</i></b></span>
+                                        <span class="ab" v-else><b v-if="(a-1)%3==0">&nbsp</b></span>
+                                    </span>
 
-                            </td>
-                        </tr>
-                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!--
+                    <div v-for="i in color" v-bind:style="{ backgroundColor: i }">
+                    Color checking
                 </div>
-                <div class="roww"></div>
-                    <div v-if="error" class="error"> 
+                -->
+
+                    <div class="roww"></div>
+                    <div v-if="error" class="error">
                         {{message_error}} !
-                      </div>
-                      <div v-if="success" class="success"> 
+                    </div>
+                    <div v-if="success" class="success">
                         {{message_success}} !
-                      </div> <br>
+                    </div> <br>
                     <div class="center">
-                    <button id='mybtn' @click="save()" style="padding: 5px 30px;"class="btn btn-success">{{word}} </button>
+                        <button id='mybtn' @click="save()" style="padding: 5px 30px;" class="btn btn-success">{{word}}
+                        </button>
                     </div>
                 </div>
             </div>
@@ -111,7 +119,7 @@
                 myArray: [],
                 time: [],
                 mame: [],
-                color: ['lightblue', 'yellow', 'red', 'green', 'pink'],
+                color: ['lightblue', '#eba834', '#ab99f7', '#43f082', '#f08ba1', '#d65154', '#6580f7', '#9d9b9e','#faf441','#f059d4'],
                 days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
                 message: "",
                 select: 'First Fit',
@@ -140,13 +148,15 @@
                                 log.time[i] = -1;
                                 log.mame[i] = "";
                             }
-                            log.time[24*60*7]=1;
+                            log.time[24 * 60 * 7] = 1;
                             console.log(log.time)
                             log.myArray = Response1
                             for (var i = 0; i < Response1.length; i++) {
                                 log.myArray[i].start = parseInt(log.myArray[i].start.slice(0, 2)) * 60 + parseInt(log.myArray[i].start.slice(3, 5));
                                 log.myArray[i].color = log.color[(i + 1) % 5]
                                 log.myArray[i].name = "  " + log.myArray[i].name + "                                                                                        ";
+                                log.myArray[i].name = log.myArray[i].name + "                                                                                     ";
+                                log.myArray[i].name = log.myArray[i].name + "                                                                                     ";
                                 log.myArray[i].name = log.myArray[i].name + "                                                                                     ";
                                 log.myArray[i].name = log.myArray[i].name + "                                                                                     ";
                                 log.myArray[i].name = log.myArray[i].name + "                                                                                     ";
@@ -182,11 +192,18 @@
                     for (var num = 0; num < log.myArray.length; num++) {
                         if (log.myArray[num].fix != 1) {
                             //console.log(log.myArray[num].name)
+                            var hole=0;
+                            var x=parseInt(log.myArray[num].duration);
                             for (var i = 0; i < 60 * 24 * 7; i++) {
-                                if (log.time[i] == -1 && log.time[i + parseInt(log.myArray[num].duration)] == -1 && log.time[i + parseInt(log.myArray[num].duration / 2)] == -1) {
-                                    //console.log(i);
-                                    log.assign(i, num);
-                                    break;
+                                if (log.time[i] == -1) {
+                                    hole++;
+                                    if(hole==x){
+                                        log.assign(i-hole,num)
+                                        break
+                                    }
+                                    continue;
+                                }else{
+                                    hole=0;
                                 }
                             }
                         }
@@ -207,10 +224,10 @@
                                 if (log.time[i] == -1) {
                                     hole++;
                                     continue;
-                                } else if(log.time[i] != -1) {
-                                    if(hole!=0){
-                                        
-                                    console.log(hole,i)
+                                } else if (log.time[i] != -1) {
+                                    if (hole != 0) {
+
+                                        console.log(hole, i)
                                     }
                                     if (dur <= hole) {
                                         if (hole > max) {
@@ -227,14 +244,14 @@
                     }
                     return 1;
                 }, bestfit() {
-                    for (var num = 0; num <= log.myArray.length; num++) {
+                    for (var num = 0; num < log.myArray.length; num++) {
                         if (log.myArray[num].fix != 1) {
                             //console.log(log.myArray[num].name)
                             var min = 24 * 60 * 7;
                             var minst = 0;
                             var hole = 0;
                             var dur = parseInt(log.myArray[num].duration);
-                            for (var i = 0; i < 60 * 24 * 7; i++) {
+                            for (var i = 0; i <= 60 * 24 * 7; i++) {
                                 if (log.time[i] == -1) {
                                     hole++;
                                     continue;
@@ -253,11 +270,11 @@
                         }
                     }
 
-                },ref(idx){
-                    window.location.href="edit_task?id=" + idx;
-                },assign(st, i) {
+                }, ref(idx) {
+                    window.location.href = "edit_task?id=" + idx;
+                }, assign(st, i) {
                     log.myArray[i].start = st;
-                    log.myArray[i].day=Math.floor(st/1440) + 1;
+                    log.myArray[i].day = Math.floor(st / 1440) + 1;
                     log.myArray[i].color = log.color[(i + 1) % 5]
                     log.myArray[i].name = "  " + log.myArray[i].name + "                                                                                        ";
                     log.myArray[i].name = log.myArray[i].name + "                                                                                     ";
@@ -295,26 +312,26 @@
                     $('#mybtn').prop('disabled', true);
                     log.word = 'Saving..'
                     $.post('./add_task3', {
-                        arr:log.myArray,
+                        arr: log.myArray,
                     }, function (data) {
                         console.log(data.message)
                         if (data.message != 'true') {
                             log.error = 1
                             log.message_error = data.message
-                            log.word="Add Again"
+                            log.word = "Add Again"
 
                         } else {
                             log.error = 0
                             log.success = 1
                             log.message_success = "Task Saved SuccessFully !"
                             setTimeout(() => {
-                                log.success=0
-                                log.word="Save Again"
+                                log.success = 0
+                                log.word = "Save Again"
                             }, 1000);
                         }
                         $('#mybtn').prop('disabled', false);
                     })
-                
+
                 }, fun2() {
                     return 'cornflowerblue'
                 }, async submit() {
@@ -323,13 +340,16 @@
                     setTimeout(function () {
                         $('#mybtn').prop('disabled', false);
                         $('#abc').hide()
+                        var x = log.select
+                        log.select = ""
+                        log.select = x
                         return
                     }, 1500)
                     for (var i = 0; i < 24 * 60 * 7; i++) {
                         log.time[i] = -1;
                         log.mame[i] = "";
                     }
-                    log.time[24*60*7]=1;
+                    log.time[24 * 60 * 7] = 1;
                     for (var i = 0; i < log.myArray.length; i++) {
                         if (log.myArray[i].fix == 1) {
                             var x = 0;
@@ -341,7 +361,7 @@
                                 x++;
                             }
                             x = 0;
-                        } 
+                        }
                     }
                     if (log.select == 'First Fit') {
                         console.log("FF")
@@ -355,7 +375,7 @@
                         console.log("WF")
                         var k = await log.worstfit();
                     }
-                    log.select=""
+                    log.select = ""
 
 
                 }
