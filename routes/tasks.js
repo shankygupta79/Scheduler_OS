@@ -172,7 +172,7 @@ route.post('/add_task3', authCheck, async (req, res) => {
 route.get('/api/tasks', authCheck, (req, res) => {
   console.log(req.query.id)
   if (req.query.id > 0) {
-    Task.findOne({ where: { id: req.query.id } })
+    Task.findOne({ where: { id: req.query.id ,U_ID: xid} })
       .then((emps) => {
         res.status(200).send(emps)
       })
@@ -197,7 +197,7 @@ route.get('/api/tasks', authCheck, (req, res) => {
 })
 route.get('/api/dash', authCheck, (req, res) => {
   Task.findAll({
-    where: { day: req.query.day }, order: [
+    where: { day: req.query.day,U_ID: xid }, order: [
       ['start', 'ASC'],
     ],
   })
